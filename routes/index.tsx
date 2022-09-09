@@ -1,4 +1,4 @@
-import { useDeno } from "framework/react";
+import { useDeno } from "runtime/react";
 import { Head, Link } from "aleph/react";
 import{ MongoClient } from "https://deno.land/x/mongo@v0.30.1/mod.ts";
 const client = new MongoClient();
