@@ -1,0 +1,1 @@
+var r=Symbol.for("Deno.customInspect"),t=class{valueOf(){return this.value}toString(){return this.value}toJSON(){return this.value}toExtendedJSON(){return{$symbol:this.value}}static fromExtendedJSON(e){return new t(e.$symbol)}[r](){return`new BSONSymbol("${this.value}")`}constructor(e){this._bsontype="Symbol",this.value=void 0,this.value=e}};export{t as BSONSymbol};

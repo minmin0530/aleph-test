@@ -23,7 +23,7 @@ export default function Index() {
   const article = useData(async () => {
     const db = client.database("bigaru111");
     const account = db.collection<Post>("Post");
-    return await account.find({ auth: { $ne: null } }).toArray();
+    return await account.findOne({ auth: { $ne: null } });
 
 
   });
@@ -45,13 +45,9 @@ export default function Index() {
         <img src="./assets/logo.svg" width="75" height="75" title="Aleph.js" />
       </p>
       <h1 className="text-3xl font-bold mt-2">
-        The Fullstack {article[0].auth}
+        The Fullstack {article.auth}
         1111
       </h1>
-      <h2>{article[0].auth}</h2>
-      <h2>{article[0].title}</h2>
-      <h2>{article[0].article}</h2>
-      <h2>{article[0].date}</h2>
 
       <p className="text-center text-md text-gray-800">
         <strong>Aleph.js</strong> gives you the best developer experience for building web applications<br />{" "}
