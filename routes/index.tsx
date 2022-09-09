@@ -1,4 +1,4 @@
-import { useDeno } from "runtime/react";
+import { useData } from "runtime/react";
 import { Head, Link } from "aleph/react";
 import{ MongoClient } from "https://deno.land/x/mongo@v0.30.1/mod.ts";
 const client = new MongoClient();
@@ -20,7 +20,7 @@ const externalLinks = [
 
 export default function Index() {
 
-  const article = useDeno(async () => {
+  const article = useData(async () => {
     const db = client.database("bigaru111");
     const account = db.collection<Post>("Post");
     return await account.find({ auth: { $ne: null } }).toArray();
