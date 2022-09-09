@@ -47,10 +47,10 @@ export default function Index() {
       <h1 className="text-3xl font-bold mt-2">
         The Fullstack Framework in Deno.
       </h1>
-      <h2>article[0].auth</h2>
-      <h2>article[0].title</h2>
-      <h2>article[0].article</h2>
-      <h2>article[0].date</h2>
+      <h2>{article[0].auth}</h2>
+      <h2>{article[0].title}</h2>
+      <h2>{article[0].article}</h2>
+      <h2>{article[0].date}</h2>
 
       <p className="text-center text-md text-gray-800">
         <strong>Aleph.js</strong> gives you the best developer experience for building web applications<br />{" "}
