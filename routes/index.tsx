@@ -1,5 +1,17 @@
+import { useDeno } from "framework/react";
 import { Head, Link } from "aleph/react";
-
+import{ MongoClient } from "https://deno.land/x/mongo@v0.30.1/mod.ts";
+const client = new MongoClient();
+await client.connect(
+  "mongodb://mongo:password@49.212.141.64:27017/?authSource=bigaru111&readPreference=primary&ssl=false&directConnection=true",
+);
+interface Post {
+  _id: ObjectId;
+  auth: string;
+  title: string;
+  article: string;
+  date: string;
+}
 const externalLinks = [
   ["Get Started", "https://alephjs.org/docs/get-started"],
   ["Docs", "https://alephjs.org/docs"],
@@ -7,6 +19,17 @@ const externalLinks = [
 ];
 
 export default function Index() {
+
+  const article = useDeno(async () => {
+    const db = client.database("bigaru111");
+    const account = db.collection<Post>("Post");
+    return await account.find({ auth: { $ne: null } }).toArray();
+
+
+  });
+
+
+
   return (
     <div
       className="w-screen flex flex-col items-center justify-center"
@@ -24,6 +47,11 @@ export default function Index() {
       <h1 className="text-3xl font-bold mt-2">
         The Fullstack Framework in Deno.
       </h1>
+      <h2>article[0].auth</h2>
+      <h2>article[0].title</h2>
+      <h2>article[0].article</h2>
+      <h2>article[0].date</h2>
+
       <p className="text-center text-md text-gray-800">
         <strong>Aleph.js</strong> gives you the best developer experience for building web applications<br />{" "}
         with modern toolings.
