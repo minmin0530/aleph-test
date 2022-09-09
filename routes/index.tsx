@@ -23,7 +23,7 @@ export default function Index() {
   const article = useData(async () => {
     const db = client.database("bigaru111");
     const account = db.collection<Post>("Post");
-    return await account.findOne({ auth: { $ne: null } });
+    return await account.find({ auth: { $ne: null } });
 
 
   });

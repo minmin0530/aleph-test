@@ -1,1 +1,0 @@
-var e=Symbol.for("Deno.customInspect"),t=class{toExtendedJSON(){return{$minKey:1}}static fromExtendedJSON(){return new t}[e](){return this.inspect()}inspect(){return"new MinKey()"}constructor(){if(this._bsontype="MinKey",!(this instanceof t))return new t}};export{t as MinKey};

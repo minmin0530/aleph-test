@@ -1,1 +1,0 @@
-var t=class extends Error{get name(){return"BSONError"}constructor(r){super(r),Object.setPrototypeOf(this,t.prototype)}},e=class extends TypeError{get name(){return"BSONTypeError"}constructor(r){super(r),Object.setPrototypeOf(this,e.prototype)}};export{t as BSONError,e as BSONTypeError};

@@ -1,1 +1,0 @@
-var e=Symbol.for("Deno.customInspect"),t=class{toExtendedJSON(){return{$maxKey:1}}static fromExtendedJSON(){return new t}[e](){return this.inspect()}inspect(){return"new MaxKey()"}constructor(){if(this._bsontype="MaxKey",!(this instanceof t))return new t}};export{t as MaxKey};
