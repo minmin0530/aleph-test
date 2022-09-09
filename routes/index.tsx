@@ -45,7 +45,7 @@ export default function Index() {
         <img src="./assets/logo.svg" width="75" height="75" title="Aleph.js" />
       </p>
       <h1 className="text-3xl font-bold mt-2">
-        The Fullstack Framework in Deno.{article[0].auth}
+        The Fullstack {article[0].auth}
         1111
       </h1>
       <h2>{article[0].auth}</h2>
